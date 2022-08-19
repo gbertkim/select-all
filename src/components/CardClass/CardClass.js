@@ -27,6 +27,9 @@ export default class CardClass extends Component {
             selectAllCheck: false,
         }
     }
+    componentDidMount() {
+        this.allCheckState(false)
+    }
     ifChecked = (inputEl) => inputEl.checked
     allCheckState = (bool) => {
         let arr = []
