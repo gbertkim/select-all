@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import '../CheckBox.css'
 export default class CheckBoxClass extends Component {
     constructor(props) {
         super(props)

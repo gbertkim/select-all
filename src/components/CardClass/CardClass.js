@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CheckBoxClass from '../CheckBoxClass/CheckBoxClass'
-
+import '../Card.css'
 export default class CardClass extends Component {
     constructor(props) {
         super(props)

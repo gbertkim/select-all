@@ -1,5 +1,5 @@
 import React from 'react'
-import './CheckBox.css'
+import '../CheckBox.css'
 const CheckBoxFn = (props) => {
     return (
         <li className='listItem'>

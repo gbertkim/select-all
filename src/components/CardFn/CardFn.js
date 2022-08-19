@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CheckBoxFn from '../CheckBoxFn/CheckBoxFn'
-import './Card.css'
+import '../Card.css'
 
 const CardFn = (props) => {
     const [message, setMessage] = useState([])
