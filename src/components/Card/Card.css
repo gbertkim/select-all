@@ -1,0 +1,35 @@
+.Card {
+    background-color: white;
+    height: 400px;
+    width: 500px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+.Card__notification {
+    display: block;
+    background-color: rgb(254, 246, 155);
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.Card__button {
+    background-color: white;
+    border: none;
+    border: 2px solid green;
+    width: 100%;
+    border-radius: 5px;
+    padding: 1rem;
+    color: green;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.Card__button:focus,
+.Card__button:hover {
+    cursor: pointer;
+}
