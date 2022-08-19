@@ -1,6 +1,6 @@
 import React from 'react'
 import './CheckBox.css'
-const CheckBox = (props) => {
+const CheckBoxFn = (props) => {
     return (
         <li className='listItem'>
             <input className='listItem__input' type='checkbox' name={props.name} value={props.value} onChange={(e) => props.onClickHandler(e)} id={props.id} checked={props.checked} />
@@ -9,4 +9,4 @@ const CheckBox = (props) => {
     )
 }
 
-export default CheckBox
+export default CheckBoxFn

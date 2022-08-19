@@ -1,26 +1,9 @@
 import React, { Component } from 'react'
 import CheckBoxClass from '../CheckBoxClass/CheckBoxClass'
-const CHECKBOXES = [
-    {
-        id: '0',
-        name: 'kosher',
-        value: 'Kosher',
-    },
-    {
-        id: '1',
-        name: 'no-celery',
-        value: 'No Celery (inc celeriac)',
-    },
-    {
-        id: '2',
-        name: 'no-egg',
-        value: 'No Egg',
-    }
-]
 
 export default class CardClass extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             message: [],
             checked: [],
@@ -33,7 +16,7 @@ export default class CardClass extends Component {
     ifChecked = (inputEl) => inputEl.checked
     allCheckState = (bool) => {
         let arr = []
-        for (let i = 0; i < CHECKBOXES.length; i++) {
+        for (let i = 0; i < this.props.CHECKBOXES.length; i++) {
             arr.push(bool)
         }
         this.setState({ checked: arr, selectAllCheck: bool })
@@ -44,7 +27,7 @@ export default class CardClass extends Component {
     }
     allMessages = () => {
         let arr = []
-        CHECKBOXES.forEach(input => arr.push(input.value))
+        this.props.CHECKBOXES.forEach(input => arr.push(input.value))
         this.setState({ message: arr })
     }
     selectAllStateUpdate = (inputEl) => {
@@ -86,7 +69,7 @@ export default class CardClass extends Component {
                 <ul className='Card__list'>
                     <CheckBoxClass name={'select-all'} value='Select All' onClickHandler={this.inputClicker} checked={this.state.selectAllCheck} />
                     {
-                        CHECKBOXES.map((input, id) => {
+                        this.props.CHECKBOXES.map((input, id) => {
                             return <CheckBoxClass key={`check-${id}`} name={input.name} value={input.value} onClickHandler={this.inputClicker} checked={this.state.checked[id] || false} id={input.id} />
                         })
                     }

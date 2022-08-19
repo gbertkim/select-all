@@ -1,27 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import CheckBox from '../CheckBox/CheckBox'
+import CheckBoxFn from '../CheckBoxFn/CheckBoxFn'
 import './Card.css'
 
-
-const CHECKBOXES = [
-    {
-        id: '0',
-        name: 'kosher',
-        value: 'Kosher',
-    },
-    {
-        id: '1',
-        name: 'no-celery',
-        value: 'No Celery (inc celeriac)',
-    },
-    {
-        id: '2',
-        name: 'no-egg',
-        value: 'No Egg',
-    }
-]
-
-const Card = () => {
+const CardFn = (props) => {
     const [message, setMessage] = useState([])
     const [checked, setChecked] = useState([])
     const [selectAllCheck, setSelectAllCheck] = useState(false)
@@ -29,7 +10,7 @@ const Card = () => {
 
     const allCheckState = (bool) => {
         let arr = []
-        for (let i = 0; i < CHECKBOXES.length; i++) {
+        for (let i = 0; i < props.CHECKBOXES.length; i++) {
             arr.push(bool)
         }
         setChecked(arr)
@@ -46,7 +27,7 @@ const Card = () => {
     }
     const allMessages = () => {
         let arr = []
-        CHECKBOXES.forEach(input => arr.push(input.value))
+        props.CHECKBOXES.forEach(input => arr.push(input.value))
         setMessage(arr)
     }
     const selectAllStateUpdate = (inputEl) => {
@@ -89,10 +70,10 @@ const Card = () => {
         <section className='Card'>
             <span className='Card__notification'>Selected Value: {message.join(', ')}</span>
             <ul className='Card__list'>
-                <CheckBox name={'select-all'} value='Select All' onClickHandler={inputClicker} checked={selectAllCheck} />
+                <CheckBoxFn name={'select-all'} value='Select All' onClickHandler={inputClicker} checked={selectAllCheck} />
                 {
-                    CHECKBOXES.map((input, id) => {
-                        return <CheckBox key={`check-${id}`} name={input.name} value={input.value} onClickHandler={inputClicker} checked={checked[id] || false} id={input.id} />
+                    props.CHECKBOXES.map((input, id) => {
+                        return <CheckBoxFn key={`check-${id}`} name={input.name} value={input.value} onClickHandler={inputClicker} checked={checked[id] || false} id={input.id} />
                     })
                 }
             </ul>
@@ -101,5 +82,5 @@ const Card = () => {
     )
 }
 
-export default Card
+export default CardFn
 
