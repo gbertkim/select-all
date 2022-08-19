@@ -92,7 +92,7 @@ const Card = () => {
                 <CheckBox name={'select-all'} value='Select All' onClickHandler={inputClicker} checked={selectAllCheck} />
                 {
                     CHECKBOXES.map((input, id) => {
-                        return <CheckBox key={`check-${id}`} name={input.name} value={input.value} onClickHandler={inputClicker} checked={checked[id]} id={input.id} />
+                        return <CheckBox key={`check-${id}`} name={input.name} value={input.value} onClickHandler={inputClicker} checked={checked[id] || false} id={input.id} />
                     })
                 }
             </ul>
