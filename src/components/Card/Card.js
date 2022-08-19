@@ -51,7 +51,7 @@ const Card = () => {
     }
     const selectAllStateUpdate = (inputEl) => {
         if (checked.every(item => item === true) && selectAllCheck) {
-            allCheckState(false)
+            clearHandler(false)
             return
         }
         if (inputEl.checked === true) {

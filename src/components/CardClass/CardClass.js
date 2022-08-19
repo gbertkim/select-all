@@ -49,7 +49,7 @@ export default class CardClass extends Component {
     }
     selectAllStateUpdate = (inputEl) => {
         if (this.state.checked.every(item => item === true) && this.state.selectAllCheck) {
-            this.allCheckState(false)
+            this.clearHandler(false)
             return
         }
         if (inputEl.checked === true) {

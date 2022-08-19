@@ -5,7 +5,9 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .Card__notification {
